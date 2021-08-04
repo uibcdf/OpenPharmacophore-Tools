@@ -1,0 +1,20 @@
+channels:
+- uibcdf/label/dev
+- uibcdf
+- conda-forge
+- ambermd
+- defaults
+dependencies:
+- uibcdf_stdlib
+- pyunitwizard
+- molsysmt
+- openmm
+- nglview
+- matplotlib
+- sphinx
+- sphinx_rtd_theme
+- sphinxcontrib-bibtex
+- nbsphinx
+- recommonmark
+- sphinx-markdown-tables
+- jupyterlab
