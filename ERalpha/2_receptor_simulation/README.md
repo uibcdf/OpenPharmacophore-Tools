@@ -22,3 +22,12 @@ PDBID: 1QKU
 - OpenMM
 - Modeller (in OpenMM)
 
+### Useful sources
+
+http://docs.openmm.org/latest/userguide/index.html    
+http://docs.openmm.org/latest/api-python/     
+https://github.com/openmm/openmm-cookbook     
+https://github.com/openmm/pdbfixer     
+https://htmlpreview.github.io/?https://github.com/openmm/pdbfixer/blob/master/Manual.html     
+
+

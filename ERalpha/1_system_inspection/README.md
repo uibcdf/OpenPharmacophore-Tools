@@ -17,3 +17,8 @@ PDBID: 1QKU
 - Python, Jupyter, etc.
 - NGLView
 - MDTraj
+
+### Useful sources
+
+- http://nglviewer.org/nglview/latest/    
+- https://www.mdtraj.org/1.9.5/index.html    
