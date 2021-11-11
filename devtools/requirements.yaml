@@ -1,0 +1,49 @@
+setup:
+  channels: &setup_channels
+    - defaults
+  dependencies: &setup_dependencies
+    - python
+    - setuptools
+    - numpy
+
+production:
+  channels: &production_channels
+    - uibcdf/label/dev
+    - uibcdf
+    - conda-forge
+    - ambermd
+    - *setup_channels
+  dependencies: &production_dependencies
+    - pyunitwizard
+    - pandas
+    - mdtraj
+    - mdanalysis
+    - nglview
+    - plip
+    - matplotlib
+    - rdkit
+    - requests
+    - scikit-learn
+    - tqdm
+    - chembl_webresource_client
+
+docs:
+  channels: &docs_channels
+    - *production_channels
+  dependencies: &docs_dependencies
+    - *production_dependencies
+    - sphinx
+    - sphinx_rtd_theme
+    - sphinxcontrib-bibtex
+    - nbsphinx
+    - recommonmark
+    - sphinx-markdown-tables
+
+development:
+  channels:
+    - *production_channels
+  dependencies:
+    - *production_dependencies
+    - *docs_dependencies
+    - pyyaml
+
