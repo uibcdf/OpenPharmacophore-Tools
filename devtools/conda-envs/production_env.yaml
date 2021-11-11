@@ -5,4 +5,15 @@ channels:
 - ambermd
 - defaults
 dependencies:
-
+- pyunitwizard
+- pandas
+- mdtraj
+- mdanalysis
+- nglview
+- plip
+- matplotlib
+- rdkit
+- requests
+- scikit-learn
+- tqdm
+- chembl_webresource_client
