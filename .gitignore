@@ -11,3 +11,4 @@ record.txt
 dist/*
 */build/
 build/
+*.h5
