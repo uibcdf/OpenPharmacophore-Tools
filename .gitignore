@@ -12,4 +12,4 @@ dist/*
 */build/
 build/
 *.h5
-/VScreening/data
+.idea/
