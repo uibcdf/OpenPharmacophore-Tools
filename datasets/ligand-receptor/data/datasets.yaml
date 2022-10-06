@@ -1,0 +1,78 @@
+# Datasets of protein-ligand complexes that can be used for structure based pharmacophore modelling
+
+CommonHitsApproach:
+
+  PDB codes file:
+    cha.txt
+  Reference:
+    Wieder, Marcus, Arthur Garon, Ugo Perricone, Stefan Boresch, Thomas Seidel, Anna Maria Almerico, and Thierry Langer. "Common hits approach; combining pharmacophore modeling and molecular dynamics simulations." Journal of chemical information and modeling 57, no. 2 (2017) 365-385
+  Comments:
+    Collection of protein-ligand complexes used for molecular dynamics simulation and extraction of pharmacophores.
+
+ERalpha:
+
+  PDB code:
+    1qku
+
+  Reference:
+    Koes, D.R. (2015). Pharmacophore Modeling Methods and Applications. In Zhang, W. (eds) Computer-Aided Drug Discovery. Methods in Pharmacology and Toxicology. Humana Press, New York, NY. https://doi.org/10.1007/7653_2015_46​
+
+  Comments:
+    Estrogen receptor complex with estradiol.
+
+
+KinaseInhibitors:
+
+  PDB code:
+    3k5u
+
+  Reference:
+    Koes, David Ryan, and Carlos J. Camacho. "Pharmer efficient and exact pharmacophore search." Journal of chemical information and modeling 51, no. 6 (2011) 1307-1314.
+
+  Comments:
+    Pharmacophore from zincpharmer page.
+
+InsulinGF:
+
+  PDB code:
+    2oj9
+
+  Reference:
+    Wieder, Marcus, Ugo Perricone, Thomas Seidel, and Thierry Langer. "Pharmacophore models derived from molecular dynamics simulations of protein-ligand complexes A case study." Natural product communications 11, no. 10 (2016) 1934578X1601101019.
+
+  Comments:
+    Insulin growth factor dynamic pharmacophore.
+
+Rhinovirus:
+
+  PDB codes file:
+    rhinovirus.txt
+
+  Reference:
+    Wolber, Gerhard, and Thierry Langer. "LigandScout 3-D pharmacophores derived from protein-bound ligands and their use as virtual screening filters." Journal of chemical information and modeling 45, no. 1 (2005) 160-169.
+
+  Comments:
+    Rhinovirus coat protein receptor
+
+
+Tyrosine Kinase:
+
+    PDB codes file:
+      tyrosine.txt
+
+    Reference:
+      Wolber, Gerhard, and Thierry Langer. "LigandScout 3-D pharmacophores derived from protein-bound ligands and their use as virtual screening filters." Journal of chemical information and modeling 45, no. 1 (2005) 160-169.
+
+    Comments:
+      Ligand scout paper
+
+
+Cruft:
+
+  PDB codes file:
+    cruft.txt
+
+  Reference:
+    https://www.daylight.com/meetings/mug01/Sayle/m4xbondage.html
+
+  Comments:

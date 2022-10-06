@@ -12,4 +12,5 @@ dist/*
 */build/
 build/
 *.h5
-/VScreening/data
+.idea/
+datasets/ligand-receptor/data/test_cases
