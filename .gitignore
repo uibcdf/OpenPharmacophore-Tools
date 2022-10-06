@@ -13,3 +13,4 @@ dist/*
 build/
 *.h5
 .idea/
+datasets/ligand-receptor/data/test_cases

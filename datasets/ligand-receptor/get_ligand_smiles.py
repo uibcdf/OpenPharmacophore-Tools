@@ -2,8 +2,28 @@ import mdtraj as mdt
 import os
 
 
+def process_smi_file(file_name):
+    """ Process Components-smiles-stereo-oe.smi file removing compound names.
+
+        This will create a file that maps pdb ids of ligands to its corresponding smiles.
+    """
+    smiles = []
+    with open(file_name) as fp:
+        for line in fp.readlines():
+            components = line.split()
+            if len(components) > 2:
+                smiles.append(components[0:2])
+
+    smiles.sort(key=lambda x: x[1])
+    with open("./data/smiles-stereo-mod.txt", "w") as fp:
+        for smi in smiles:
+            if len(smi[1]) <= 3:
+                line = smi[1] + " " + smi[0] + '\n'
+                fp.write(line)
+
+
 def load_smiles_db():
-    """ Returns a ditctionary that maps pdb ids to smiles.
+    """ Returns a dictionary that maps pdb ids to smiles.
 
         Returns
         -------
@@ -80,7 +100,7 @@ def create_ligands_smi_file(ligand_ids, pdb_path, id_to_smiles, failures):
         fp.write(lines)
 
 
-def main():
+def write_pdb_ligands_to_smi():
     """ Obtain the smiles of each ligand in each pdb and save it to a file.
     """
     pdb_to_smiles = load_smiles_db()
@@ -112,8 +132,3 @@ def main():
         print(ligand_fails)
         print("The pdbs that presented issues were:")
         print(pdb_fails)
-
-
-if __name__ == "__main__":
-    main()
-    print("\n\nDONE")
