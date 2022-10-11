@@ -7,3 +7,4 @@ test cases, datasets, scripts, etc.
 
 - [Molecular Dynamics Simulations](simulations/README.md)
 - [Datasets](datasets/README.md)
+- [Notebooks](notebooks/README.md)
