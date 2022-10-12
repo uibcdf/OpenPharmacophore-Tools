@@ -1,5 +1,5 @@
 from matplotlib.colors import to_rgb
-
+from copy import deepcopy
 
 palette = {
         'PosIonizable': '#3498DB',  # Blue
@@ -32,6 +32,6 @@ def add_features_to_view(view, feats_center, convert=True):
             name = feat_name + " " + str(ii)
             if convert:
                 # convert to angstroms
-                centroid *= 10
+                centroid = deepcopy(centroid) * 10  # avoid modifying the original coordinates
             add_sphere_to_view(view, centroid, 
                                1.0, palette[feat_name], name)
