@@ -109,7 +109,7 @@ def write_pdb_ligands_to_smi():
     pdb_fails = []
     num_ligand_fails = 0
 
-    for root, directories, filenames in os.walk("./data/test_cases"):
+    for root, directories, filenames in os.walk("./test_cases"):
         for file in filenames:
             if file.endswith(".pdb"):
                 num_files += 1
