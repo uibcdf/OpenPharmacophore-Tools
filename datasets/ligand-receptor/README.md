@@ -12,9 +12,10 @@ The following datasets are included:
 - Rhinovirus
 - Tyrosine Kinase
 - Cruft
+- Plip
 
-Each one consists of a set of pdb files, and a smi files containing the smiles of the ligands present
-in each protein-ligand complex.
+Each one consists of a set of pdb files, a smi file containing the smiles of the ligands present
+in each protein-ligand complex as well as a pdb file for each ligand.
 
 Because there are a lot pdb files, they are not stored in this repository. However, the datasets can
 be downloaded automatically running the script create_dataset.py:
