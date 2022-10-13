@@ -131,4 +131,4 @@ def write_pdb_ligands_to_smi():
         print("A smiles could not be obtained for the following ligand ids:")
         print(ligand_fails)
         print("The pdbs that presented issues were:")
-        print(pdb_fails)
+        print(pdb_fails, "\n\n")

@@ -88,7 +88,7 @@ def fetch_all_datasets():
         folders and writes a readme for each dataset.
     """
     download_path = "./test_cases"
-    pdb_codes_path = "./pdb_codes"
+    pdb_codes_path = "./data/pdb_codes"
 
     if not os.path.isdir(download_path):
         os.mkdir(download_path)
