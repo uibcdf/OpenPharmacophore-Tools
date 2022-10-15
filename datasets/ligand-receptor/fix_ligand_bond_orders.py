@@ -44,6 +44,8 @@ def fix_bond_orders_from_smiles(molecule, smiles, ligand_id):
     if template.GetNumAtoms() != molecule.GetNumAtoms():
         raise NumberOfAtomsError(ligand_id, smiles)
 
+    return AllChem.AssignBondOrdersFromTemplate(template, molecule)
+
 
 def fix_bond_orders(print_ligands=False):
     """ Fix the bond orders of the ligands contained in the dataset.
@@ -90,11 +92,11 @@ def fix_bond_orders(print_ligands=False):
                     except NumberOfAtomsError:
                         fails_num_atoms.append(os.path.join(root, file))
                         fails_ligand_names.add(ligand_name)
-                    except SmilesToMolError:
+                    except (SmilesToMolError, ValueError):
                         fails_other.append(os.path.join(root, file))
                         fails_ligand_names.add(ligand_name)
                         fails_smiles += 1
-
+                        
                     n_success += 1
                     success_ligand_names.add(ligand_name)
                     print(f"Fixed molecule for {ligand_name}")
