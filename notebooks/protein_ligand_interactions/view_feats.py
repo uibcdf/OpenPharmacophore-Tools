@@ -35,3 +35,14 @@ def add_features_to_view(view, feats_center, convert=True):
                 centroid = deepcopy(centroid) * 10  # avoid modifying the original coordinates
             add_sphere_to_view(view, centroid, 
                                1.0, palette[feat_name], name)
+            
+            
+def add_points_to_view(view, points_center, point_type):
+    """ Add pharmacophoric points to a view.
+    """
+    color = palette[point_type]
+    for ii, center in enumerate(points_center):
+        name = point_type + " " + str(ii)
+        center = deepcopy(center) * 10
+        add_sphere_to_view(view, center, 
+                           1.0, color, name)
