@@ -87,7 +87,7 @@ def fetch_all_datasets():
         It downloads all the required pdb files, organizes into appropriate
         folders and writes a readme for each dataset.
     """
-    download_path = "./data/test_cases"
+    download_path = "./test_cases"
     pdb_codes_path = "./data/pdb_codes"
 
     if not os.path.isdir(download_path):
