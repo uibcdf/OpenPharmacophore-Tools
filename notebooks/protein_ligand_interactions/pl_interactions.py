@@ -1,8 +1,7 @@
 # Protein ligand interactions
 import numpy as np
 from collections import defaultdict
-from rdkit import Chem
-from rdkit.Chem import AllChem
+from rdkit.Chem import AllChem as Chem
 
 
 # The following values are in nanometers. Taken from PLIP
@@ -271,10 +270,8 @@ def fix_bond_order_from_smiles(molecule, smiles):
         rdkit.Mol
             Molecule with correct bond orders
     """
-    # TODO: if the molecule and the template dont have the same number of
-    #  atoms this will fail. We should create a custom exception for that.
-    template = AllChem.MolFromSmiles(smiles)
-    return AllChem.AssignBondOrdersFromTemplate(template, molecule)
+    template = Chem.MolFromSmiles(smiles)
+    return Chem.AssignBondOrdersFromTemplate(template, molecule)
 
 
 def hydrophobic_pharmacophoric_points(ligand_hyd_centers, protein_hyd_centers):
@@ -303,3 +300,43 @@ def hydrophobic_pharmacophoric_points(ligand_hyd_centers, protein_hyd_centers):
                 break
 
     return hyd_points
+
+
+def extract_binding_site(traj, ligand_id):
+    """ Extract the binding site with the ligand.
+
+        Parameters
+        ----------
+        traj : mdtraj.Trajectory
+        ligand_id : str
+
+        Returns
+        -------
+        bsite : mdtrajTrajectory
+    """
+    lig_center = ligand_centroid(traj, ligand_id)
+    lig_extent = ligand_maximum_extent(traj, ligand_id)
+    bs_indices = get_binding_site_atoms_indices(lig_center, lig_extent, traj.xyz[0])
+
+    bsite = traj.atom_slice(bs_indices)
+
+    bsite_df, _ = bsite.topology.to_dataframe()
+    traj_df, _ = traj.topology.to_dataframe()
+    bs_res_seq = bsite_df["resSeq"].unique()
+
+    # Remove incomplete residues from the trajectory
+    incomplete_residues = []
+    for res in bs_res_seq:
+        res_bs = bsite_df[bsite_df["resSeq"] == res]
+        res_traj = traj_df[traj_df["resSeq"] == res]
+        if len(res_bs) != len(res_traj):
+            incomplete_residues.append(res)
+
+    atoms_bs = []
+    for atom in bsite.topology.atoms:
+
+        if atom.residue.resSeq not in incomplete_residues:
+            atoms_bs.append(atom.index)
+
+    bsite = bsite.atom_slice(atoms_bs)
+    return bsite
