@@ -18,7 +18,14 @@ def add_sphere_to_view(view, center, radius, color, name):
     view.shape.add_sphere(center.tolist(), to_rgb(color), radius, name)
     view.update_representation(component=n_components, repr_index=0, opacity=0.5)
 
-    
+
+def add_arrow_to_view(view, origin, end, color):
+    """ Add an arrow to a view. """
+    n_components = len(view._ngl_component_ids)
+    view.shape.add_arrow(origin.tolist(), end, to_rgb(color), 0.2)
+    view.update_representation(component=n_components, repr_index=0, opacity=0.5)
+
+
 def add_features_to_view(view, feats_center, convert=True):
     """ Add chemical features to a view.
         
