@@ -14,3 +14,5 @@ build/
 *.h5
 .idea/
 datasets/ligand-receptor/test_cases
+*.sdf
+
