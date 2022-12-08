@@ -1,0 +1,7 @@
+Smiles,PDBID,LigID
+c1ccc(c(c1)C(=O)NCCC[C@@H](C(=O)O)NC(=O)c2ccc(cc2)NCc3cnc4c(n3)c(nc(n4)N)N)C(=O)O,1OHK,COP
+c1cc(ccc1C(=O)N[C@@H](CCC(=O)O)C(=O)O)NCc2cnc3c(n2)C(=O)N=C(N3)N,1DRF,FOL
+c1cc(ccc1C(=O)N[C@@H](CCC(=O)O)C(=O)O)NCc2cc3c(nc2)NC(=NC3=O)N,2DHF,DZF
+C[N@](Cc1coc2c1c(nc(n2)N)N)c3ccc(cc3)C(=O)N[C@@H](CCC(=O)O)C(=O)O,1HFP,MOT
+C[N@](Cc1cc(ccc1OC)OC)c2cc3c(nc(nc3nc2)N)N,1BOZ,PRD
+Cc1c(cnc2c1c(nc(n2)N)N)Cc3cc(ccc3OC)OC,1DLR,MXA
